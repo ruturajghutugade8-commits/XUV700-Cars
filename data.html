@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Root HTML element -->
+<html>
+<!-- Head section (metadata, styles) -->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Admin - Bookings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/data.css') }}">
+</head>
+<!-- Body section (page content) -->
+<body>
+  <header>
+    <h1>All Bookings (Admin)</h1>
+    <nav><a href="{{ url_for('index') }}">Home</a> | <a href="{{ url_for('logout') }}">Logout</a></nav>
+  </header>
+
+  <main>
+    <!-- Container division -->
+<div id="dataTable">Loading bookings...</div>
+
+    <!-- Container division -->
+<div class="admin-actions">
+      <button id="clearAll" class="danger">Clear All Bookings</button>  
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+</body>
+</html>

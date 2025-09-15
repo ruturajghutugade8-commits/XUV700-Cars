@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section (metadata, styles) -->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Booking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/book.css') }}"/>
+</head>
+<!-- Body section (page content) -->
+<body>
+  <header>
+    <h1>Booking Form</h1>
+    <nav><a href="{{ url_for('index') }}">Home</a> | <a href="{{ url_for('admin_login') }}">Admin</a></nav>
+  </header>
+
+  <main class="booking-container">
+    <!-- Form for user input -->
+<form id="bookingForm">
+      <label>Name</label>
+      <input name="name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Phone</label>
+      <input name="phone">
+
+      <label>Car Model</label>
+      <input name="car_model" value="XUV 7000" readonly>
+
+      <label>Start Date</label>
+      <input type="date" name="start_date">
+
+      <label>End Date</label>
+      <input type="date" name="end_date">
+
+      <label>Price</label>
+      <input name="price" value="₹5000/day" readonly>
+
+      <!-- Container division -->
+<div class="buttons">
+        <button type="button" id="previewBtn">Preview</button>
+         <button type="submit" onclick="alert('booking details save to the server...')"> Save to Server</button>
+         <button><a href="{{ url_for('pay') }}">Pay</a></button>
+      </div>
+    </form>
+
+    <section id="preview" class="preview">
+      <!-- JS will render preview here -->
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/book.js') }}"></script>
+</body>
+</html>

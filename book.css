@@ -1,0 +1,146 @@
+/* book.css - Modern Attractive Booking Form */
+
+/* Global */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #eef2ff, #fdfcfb);
+  color: #222;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #0ea5a4, #2563eb);
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #fcd34d;
+}
+
+/* Booking Container */
+/* Style for .booking-container { */
+.booking-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.booking-container h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #0ea5a4;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Elements */
+form label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  border-color: #0ea5a4;
+  box-shadow: 0 0 6px rgba(14,165,164,0.4);
+  outline: none;
+}
+
+/* Buttons */
+form /* Style for .buttons { */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #0ea5a4, #2563eb);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(14,165,164,0.3);
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #2563eb, #0ea5a4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14,165,164,0.4);
+}
+
+button[type="reset"] {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+button[type="reset"]:hover {
+  background: #e5e7eb;
+}
+
+/* Preview Section */
+#preview {
+  margin-top: 24px;
+}
+
+/* Style for .preview-card { */
+.preview-card {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e6edf0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.preview-card h3 {
+  margin-top: 0;
+  color: #0ea5a4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

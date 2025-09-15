@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section (metadata, styles) -->
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pay.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<!-- Body section (page content) -->
+<body>
+  <!-- Payment Card -->
+  <!-- Container division -->
+<div class="card" id="paymentCard">
+    <h2>Payment Page</h2>
+
+    <!-- Booking Summary -->
+    <!-- Container division -->
+<div class="summary" id="bookingSummary"></div>
+
+    <!-- Pay Button -->
+    <button class="gpay-btn" onclick="payNow()">Pay Advance 5000/-</button>
+
+    <!-- QR Code -->
+    <!-- Container division -->
+<div id="qrcode"></div>
+  </div>
+
+  <!-- ✅ Success Overlay -->
+  <!-- Container division -->
+<div class="success-overlay" id="successOverlay">
+    <!-- Container division -->
+<div class="success-content">
+      <h1>✅ Payment Successful</h1>
+      <p id="paidAmount"></p>
+      <p>Thank you for booking with us!</p>
+    </div>
+  </div>
+
+  <script>
+  // pay.js - Payment logic
+
+const booking = JSON.parse(sessionStorage.getItem("bookingDetails"));
+let currentInstallmentAmount = 0;
+
+if (booking) {
+  document.getElementById("bookingSummary").innerHTML = `
+    <p><strong>Name:</strong> ${booking.name || ''}</p>
+    <p><strong>Car:</strong> ${booking.car_model || ''}</p>
+    <p><strong>From:</strong> ${booking.start_date || ''}</p>
+    <p><strong>To:</strong> ${booking.end_date || 0}</p>
+  `;
+  updateInstallment();
+}
+function payNow() {
+  const upiID = "ruturajghutugade8@okhdfcbank";
+  const name = "Ruturaj Ghutugade";
+  const note = `Car Booking Installment - ${booking?.car_model || 'Car'}`;
+
+  const fixedAmount = 5000; // ✅ always 5000
+
+  const upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(name)}&am=${fixedAmount}&cu=INR&tn=${encodeURIComponent(note)}`;
+
+  // Show QR code
+  document.getElementById("qrcode").innerHTML = "";
+  new QRCode(document.getElementById("qrcode"), { text: upiLink, width: 200, height: 200 });
+
+  // 👉 Optionally redirect to UPI app (uncomment if desired)
+  // window.location.href = upiLink;
+}
+
+// 🔄 Simulated status check
+function checkPaymentStatus() {
+  if (localStorage.getItem("paymentConfirmed") === "true") {
+    document.getElementById("paymentCard").style.display = "none";
+    document.getElementById("successOverlay").style.display = "flex";
+    document.getElementById("paidAmount").textContent = `Paid Amount: ₹${currentInstallmentAmount}`;
+    localStorage.removeItem("paymentConfirmed"); // clear flag
+  }
+}
+
+checkPaymentStatus();
+setInterval(checkPaymentStatus, 2000);
+
+</script>
+</body>
+</html>

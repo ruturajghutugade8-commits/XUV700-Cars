@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Root HTML element -->
+<html>
+<!-- Head section (metadata, styles) -->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Rate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rate.css') }}">
+</head>
+<!-- Body section (page content) -->
+<body>
+  <header>
+    <h1>Rate Our Service</h1>
+    <nav><a href="{{ url_for('index') }}">Home</a></nav>
+  </header>
+
+  <main class="rate-main">
+    <p>Thanks for using RMS. Leave your rating below (demo only).</p>
+    <!-- Form for user input -->
+<form>
+      <label>Rating (1-5)</label>
+      <input type="number" min="1" max="5" value="5">
+      <label>Feedback</label>
+      <textarea></textarea>
+      <button type="button">Submit</button>
+    </form>
+  </main>
+</body>
+</html>

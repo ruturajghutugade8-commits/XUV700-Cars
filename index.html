@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section (metadata, styles) -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RMS - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<!-- Body section (page content) -->
+<body>
+  <header class="site-header">
+    <h1>RMS — Rental / Booking</h1>
+    <nav>
+      <a href="{{ url_for('book') }}">Book</a>
+      <a href="{{ url_for('rate') }}">Rate</a>
+      <a href="{{ url_for('admin_login') }}">Admin</a>
+    </nav>
+  </header>
+
+  <main class="home-main">
+    <section class="hero">
+      <h2>Welcome!</h2>
+      <p>Use the booking page to create a booking request. Admins can view and manage bookings.</p>
+      <a class="cta" href="{{ url_for('book') }}">Go to Booking</a>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

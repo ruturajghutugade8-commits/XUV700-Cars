@@ -1,0 +1,106 @@
+/* login.css - Attractive Admin Login */
+
+/* Background */
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Main Wrapper */
+/* Style for .login-wrap { */
+.login-wrap {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+.login-wrap h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-shadow: 0 0 10px rgba(96,165,250,0.6);
+}
+
+/* Error Message */
+/* Style for .error { */
+.error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+/* Form */
+/* Style for .login-form { */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.login-form label {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+.login-form input {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 8px rgba(96,165,250,0.5);
+}
+
+/* Button */
+button {
+  margin-top: 22px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(37,99,235,0.3);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

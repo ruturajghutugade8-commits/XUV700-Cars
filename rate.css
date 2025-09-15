@@ -1,0 +1,5 @@
+/* rate.css */
+body { font-family: Arial, sans-serif; background:#fef3ef; margin:0; color:#222; }
+header { background:#be185d; color:#fff; padding:12px; }
+/* Style for .rate-main { */
+.rate-main { max-width:760px; margin:18px auto; padding:16px; background:#fff; border-radius:8px; }
