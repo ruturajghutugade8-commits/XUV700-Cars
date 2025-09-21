@@ -37,28 +37,18 @@ static/js/ # JavaScript files (frontend logic)
 
 ``it is for bash:
 
-
-# Clone repo
-git clone https://github.com/your-username/library-booking-system.git && cd library-booking-system && \
-
 # Create virtual environment
-python -m venv venv && \
+python -m venv venv 
 
-# Activate venv (Windows)
-source venv/Scripts/activate || \
+source venv/Scripts/activate 
 
-# Activate venv (Linux/Mac)
-source venv/bin/activate && \
-
-# Install dependencies
 pip install -r requirements.txt && \
 
-# Run the app
 python app.py
 
 
 Open browser:
-👉 http://127.0.0.1:5000/
+👉 http://127.0.0.1:8000/
 
 Available routes:
 
