@@ -1,8 +1,6 @@
 # XUV700-Cars
 this project makes using Python, flask, sqllite
 
-# 📚 Library Booking & Management System
-
 A **Flask-based web application** for handling bookings, payments, ratings, and admin management.  
 This project uses **Flask (Python)**, **SQLite** databases, and includes a simple frontend with **HTML, CSS, and JavaScript**.
 
